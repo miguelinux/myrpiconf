@@ -1,0 +1,1 @@
+console=serial0,115200 console=tty1 root=PARTUUID=2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait brd.rd_nr=2 ipv6.disable=1
