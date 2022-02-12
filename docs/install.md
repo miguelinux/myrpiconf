@@ -3,8 +3,7 @@
 * add `arm_64bit=1` to /boot/config.txt
 * configure hostname con `sudo raspi-config`
 * change pi password
-* apt install btrfs-tools
-* apt install cryptsetup
+* sudo apt install btrfs-progs udisks2-btrfs udisks2-btrfs
 * Docker
   - apt install apt-transport-https ca-certificates curl gnupg lsb-release
   - curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor
@@ -20,8 +19,10 @@ https://download.docker.com/linux/debian \
 https://di-marco.net/blog/it/2020-04-18-tips-disabling_bluetooth_on_raspberry_pi/
 dtoverlay=disable-bt
 dtoverlay=disable-wifi
+
 dtoverlay=disable-bt,disable-wifi
 dtparam=audio=off
+
 sudo systemctl disable hciuart.service
 sudo systemctl disable bluetooth.service
 systemctl disable wpa_supplicant.service
