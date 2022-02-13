@@ -17,6 +17,7 @@ https://download.docker.com/linux/debian \
 
 
 https://di-marco.net/blog/it/2020-04-18-tips-disabling_bluetooth_on_raspberry_pi/
+
 dtoverlay=disable-bt
 dtoverlay=disable-wifi
 
@@ -35,19 +36,25 @@ sudo apt-get autoremove -y
 apt purge bluez bluez-firmware pi-bluetooth
 
 
-
 sudo apt install stow tmux
 
 cmdline.txt
 brd.rd_nr=4
 
 
-ZRAM
-systemctl disable dphys-swapfile.service
-sudo apt-get purge dphys-swapfile
-sudo apt-get autoremove -y
+systemctl set-default multi-user.target
 
 
+## ZRAM
+
+* systemctl disable dphys-swapfile.service
+* sudo apt-get purge dphys-swapfile
+* sudo apt-get autoremove -y
+
+
+## For developtment
+
+sudo apt install git bc bison flex libssl-dev make vim
 
 
 
