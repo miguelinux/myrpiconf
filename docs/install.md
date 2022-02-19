@@ -47,9 +47,14 @@ systemctl set-default multi-user.target
 
 ## ZRAM
 
+https://github.com/systemd/zram-generator.git
+
+* NOMAN=1 make
+* NOMAN=1 NOBUILD=1 make install
 * systemctl disable dphys-swapfile.service
-* sudo apt-get purge dphys-swapfile
-* sudo apt-get autoremove -y
+* dphys-swapfile swapoff
+* apt purge dphys-swapfile
+* apt autoremove -y
 
 
 ## For developtment
