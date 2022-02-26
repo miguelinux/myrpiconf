@@ -29,8 +29,8 @@ services:
       VIRTUAL_HOST: pihole.${MY_DOMAIN}
       VIRTUAL_PORT: 80
     volumes:
-      - '${CONFIG_ROOT}/etc/pihole/:/etc/pihole/'
-      - '${CONFIG_ROOT}/etc/dnsmasq.d/:/etc/dnsmasq.d/'
+      - '${CONFIG_ROOT}/etc/pihole:/etc/pihole/'
+      - '${CONFIG_ROOT}/etc/dnsmasq.d:/etc/dnsmasq.d/'
     extra_hosts:
       - "pihole pihole.${MY_DOMAIN}:${HOST_IP}"
       - "${MY_ROUTER}"
