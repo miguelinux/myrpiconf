@@ -1,6 +1,12 @@
 proc            /proc           proc    defaults          0       0
-PARTUUID=1  /boot           vfat    defaults          0       2
-PARTUUID=2  /               ext4    defaults,noatime  0       1
-UUID=3      /home           btrfs   subvol=home,ssd,x-systemd.device-timeout=0 0 0
-UUID=4      /var/lib/docker btrfs   ssd,x-systemd.device-timeout=0 0 0
-/dev/mapper/cmiguel       /home/miguel   ext4    defaults,noatime,noauto  0  2
+PARTUUID=1  /boot           vfat    defaults,x-systemd.automount,x-systemd.idle-timeout=10m    0       2
+PARTUUID=1  /               ext4    defaults,noatime                                           0       1
+#UUID=1      /var/lib/docker btrfs   ssd,x-systemd.device-timeout=3 0 0
+#UUID=1      /home           btrfs   subvol=home,ssd,x-systemd.requires=systemd-modules-load,x-systemd.device-timeout=1  0 0
+#UUID=1      /srv/share      btrfs   subvol=share,ssd,x-systemd.requires=systemd-modules-load,x-systemd.device-timeout=6 0 0
+UUID=1      /home           btrfs   subvol=home,ssd,x-systemd.automount                        0       0
+UUID=1      /srv/share      btrfs   subvol=share,ssd,x-systemd.automount                       0       0
+UUID=1      /var/lib/docker btrfs   ssd,x-systemd.automount                                    0       0
+/dev/mapper/cmiguel                            /home/miguel    ext4    defaults,noatime,noauto                                    0       2
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
