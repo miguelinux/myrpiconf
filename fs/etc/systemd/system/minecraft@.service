@@ -9,7 +9,7 @@ Type=forking
 PrivateUsers=true
 
 # User Config
-User=minecraf
+User=minecraft
 Group=minecraft
 
 # Security Options
