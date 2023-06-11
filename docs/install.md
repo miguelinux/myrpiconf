@@ -44,10 +44,15 @@ brd.rd_nr=4
 
 systemctl set-default multi-user.target
 
-
 ## ZRAM
 
+https://wiki.debian.org/ZRam
+* Install zram-tools
+
+## ZRAM old
+
 https://github.com/systemd/zram-generator.git
+
 
 * NOMAN=1 make
 * NOMAN=1 NOBUILD=1 make install
